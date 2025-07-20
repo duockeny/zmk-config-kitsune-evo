@@ -1,6 +1,7 @@
-#undef ZMK_BEHAVIORS_KEEP_ALL 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
+
+// To add bluetooth behviours
 
 /*
 * ┌──┐┌──┐┌──┐┌──┐┌──┐┌──┐┌──┐┌──┐┌──┐┌──┐┌──┐┌─────┐
