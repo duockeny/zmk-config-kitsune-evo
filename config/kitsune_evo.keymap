@@ -1,8 +1,13 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/rgb.h>
+#include <dt-bindings/zmk/bt.h>
 
-// To add bluetooth and deep sleep behaviors
+&soft_off {
+    hold-time-ms = <3000>; // Only turn off it the key is held for 3 seconds or longer.
+};
+
+// To add bluetooth behaviors
 
 / {
     keymap {
@@ -28,19 +33,19 @@
 
         2 {
             bindings = <
-                &none  &none  &none  &none  &none  &none     &none  &kp HOME &kp UP   &kp PG_UP &kp BSLH &kp DEL
-                &none  &none  &none  &none  &none  &none     &none  &kp LEFT &kp DOWN &kp RIGHT &kp LBKT &kp RBKT
-                &trans &none  &none  &none  &none  &none     &none  &kp END  &none    &kp PG_DN &none    &trans
-                &trans &trans &trans &mo 3         &kp SPACE        &trans   &trans             &mo 6    &trans
+                &none  &none  &none  &none  &none  &none     &none &kp HOME &kp UP   &kp PG_UP &kp BSLH &kp DEL
+                &none  &none  &none  &none  &none  &none     &none &kp LEFT &kp DOWN &kp RIGHT &kp LBKT &kp RBKT
+                &trans &none  &none  &none  &none  &none     &none &kp END  &none    &kp PG_DN &none    &trans
+                &trans &trans &trans &mo 3         &kp SPACE       &trans   &trans             &mo 6    &trans
             >;
         };
 
         3 {
             bindings = <
-                &bootloader &none  &none  &none  &none  &none  &none  &none  &none  &none  &kp F11 &kp F12
-                &none       &kp F1 &kp F2 &kp F3 &kp F4 &kp F5 &kp F6 &kp F7 &kp F8 &kp F9 &kp F10 &studio_unlock
-                &trans      &none  &none  &none  &none  &none  &none  &none  &none  &none  &none   &trans
-                &trans      &trans &trans &trans        &none         &trans &trans        &mo 7   &trans
+                &bootloader &none  &none  &none  &none  &none     &none  &none  &none  &none  &kp F11 &kp F12
+                &none       &kp F1 &kp F2 &kp F3 &kp F4 &kp F5    &kp F6 &kp F7 &kp F8 &kp F9 &kp F10 &studio_unlock
+                &trans      &none  &none  &none  &none  &soft_off &none  &none  &none  &none  &none   &trans
+                &trans      &trans &trans &trans        &none            &trans &trans        &mo 7   &trans
             >;
         };
 
