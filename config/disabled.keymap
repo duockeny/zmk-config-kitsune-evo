@@ -7,7 +7,7 @@
 #define BT_FN(profile) &bt_fn profile profile // Macro to apply bt_fn to the same profile
 
 &soft_off {
-    hold-time-ms = <1000>; // Only turn off when held for 3 seconds or longer
+    hold-time-ms = <1000>; // Only turn off when held for 1 second or longer
 };
 
 / {
@@ -15,6 +15,8 @@
         // Select, then output to BT profile
         bt_con: bt_con {
             compatible = "zmk,behavior-macro-one-param";
+            wait-ms = <40>;
+            tap-ms = <40>;
             #binding-cells = <1>;
             bindings
                 = <&macro_param_1to2>
@@ -26,6 +28,8 @@
         // Select, then clear, then output to BT profile
         bt_clr: bt_clr {
             compatible = "zmk,behavior-macro-one-param";
+            wait-ms = <40>;
+            tap-ms = <40>;
             #binding-cells = <1>;
             bindings
                 = <&macro_param_1to2>
@@ -37,7 +41,7 @@
     };
 
     behaviors {
-        // TAP: Connect to selected BT profile | HOLD: Forget selected BT profile and put into pairing mode
+        // Connect to selected BT profile on tap, forget selected BT profile and put into pairing mode on hold for 1 second or longer
         bt_fn: bt_fn {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
