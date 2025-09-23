@@ -3,6 +3,7 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/rgb.h>
+#include <dt-bindings/zmk/pointing.h>
 
 #define BT_FN(profile) &bt_fn profile profile // Macro to apply bt_fn to the same profile
 
@@ -74,10 +75,10 @@
 
         2 {
             bindings = <
-                &none  &none  &none  &none  &none  &none     &none &kp HOME &kp UP   &kp PG_UP &kp BSLH &kp DEL
-                &none  &none  &none  &none  &none  &none     &none &kp LEFT &kp DOWN &kp RIGHT &kp LBKT &kp RBKT
-                &trans &none  &none  &none  &none  &none     &none &kp END  &none    &kp PG_DN &none    &trans
-                &trans &trans &trans &mo 3         &kp SPACE       &trans   &trans             &mo 6    &trans
+                &none  &mmk LCLK      &mmk MOVE_UP   &mmk RCLK       &mmk SCRL_UP   &none     &none &kp HOME &kp UP   &kp PG_UP &kp BSLH &kp DEL
+                &none  &mmk MOVE_LEFT &mmk MOVE_DOWN &mmk MOVE_RIGHT &mmk SCRL_DOWN &none     &none &kp LEFT &kp DOWN &kp RIGHT &kp LBKT &kp RBKT
+                &trans &none          &none          &none           &none          &none     &none &kp END  &none    &kp PG_DN &none    &trans
+                &trans &trans         &trans         &mo 3                          &kp SPACE       &trans   &trans             &mo 6    &trans
             >;
         };
 
