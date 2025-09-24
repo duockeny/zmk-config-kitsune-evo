@@ -70,7 +70,7 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <BT_SELCLR 0>, <&bt BT_DISC 0>;
+            bindings = <BT_SELCLR(0)>, <&bt BT_DISC 0>;
         };
 
         // Connect on tap, disconnect on double tap, forget and put into pairing mode on hold, for BT profile 1
@@ -78,7 +78,7 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <BT_SELCLR 1>, <&bt BT_DISC 1>;
+            bindings = <BT_SELCLR(1)>, <&bt BT_DISC 1>;
         };
 
         // Connect on tap, disconnect on double tap, forget and put into pairing mode on hold, for BT profile 2
@@ -86,7 +86,7 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <BT_SELCLR 2>, <&bt BT_DISC 2>;
+            bindings = <BT_SELCLR(2)>, <&bt BT_DISC 2>;
         };
     };
 
